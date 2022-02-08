@@ -116,7 +116,6 @@ function App() {
       const listId = history.location.pathname.split('lists/')[1];
       if (lists) {
         const list = lists.find((list) => list.id === Number(listId));
-
         setActiveItem(list);
       }
     }
