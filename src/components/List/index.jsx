@@ -4,13 +4,14 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import './List.scss';
 import Bage from '../Bage';
+import { jsonApi } from '../../Api';
 
 const List = ({ items, isRemovable, className, onClick, onClickItem, onRemove, activeItem }) => {
   let history = useHistory();
 
   const removeList = (item) => {
     if (window.confirm('Вы действительно хоитте удалить список?')) {
-      axios.delete('http://localhost:3001/lists/' + item.id).then(() => {
+      axios.delete(`${jsonApi}/lists/` + item.id).then(() => {
         onRemove(item.id);
         history.push('/');
       });

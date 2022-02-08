@@ -6,6 +6,7 @@ import './Tasks.scss';
 import AddTasksForm from './AddTasksForm';
 import Task from './Task';
 import { Link } from 'react-router-dom';
+import { jsonApi } from '../../Api';
 
 function Tasks({ list, onEditTitle, onAddTask, onRemoveTask, onEditTask, onCompletedTask }) {
   const editTitle = () => {
@@ -13,7 +14,7 @@ function Tasks({ list, onEditTitle, onAddTask, onRemoveTask, onEditTask, onCompl
     if (newTitle) {
       onEditTitle(list.id, newTitle);
       axios
-        .patch('http://localhost:3001/lists/' + list.id, {
+        .patch(`${jsonApi}lists/` + list.id, {
           name: newTitle,
         })
         .catch(() => {

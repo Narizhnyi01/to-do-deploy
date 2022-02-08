@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Route, useHistory } from 'react-router-dom';
 
 import { AddList, List, Tasks } from './components';
+import { jsonApi } from './Api';
 
 function App() {
   const [lists, setLists] = useState(null);
@@ -11,10 +12,10 @@ function App() {
   let history = useHistory();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks').then(({ data }) => {
+    axios.get(`${jsonApi}/lists?_expand=color&_embed=tasks`).then(({ data }) => {
       setLists(data);
     });
-    axios.get('http://localhost:3001/colors').then(({ data }) => {
+    axios.get(`${jsonApi}/colors`).then(({ data }) => {
       setColors(data);
     });
   }, []);
@@ -54,7 +55,7 @@ function App() {
     });
     setLists(newList);
     axios
-      .patch('http://localhost:3001/tasks/' + taskObj.id, {
+      .patch(`${jsonApi}/tasks/` + taskObj.id, {
         text: newTaskText,
       })
       .catch(() => {
@@ -71,7 +72,7 @@ function App() {
         return item;
       });
       setLists(newList);
-      axios.delete('http://localhost:3001/tasks/' + taskId).catch(() => {
+      axios.delete(`${jsonApi}/tasks/` + taskId).catch(() => {
         alert('Не удалось удалить задачу');
       });
     }
@@ -101,7 +102,7 @@ function App() {
     });
     setLists(newList);
     axios
-      .patch('http://localhost:3001/tasks/' + taskId, {
+      .patch(`${jsonApi}/tasks/` + taskId, {
         completed,
       })
       .catch((e) => {
