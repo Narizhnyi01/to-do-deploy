@@ -1,1 +1,1 @@
-export const jsonApi = 'https://pro-to-do.herokuapp.com/';
+export const jsonApi = 'https://pro-to-do.herokuapp.com';
