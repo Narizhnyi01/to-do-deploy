@@ -54,6 +54,7 @@ function App() {
       return list;
     });
     setLists(newList);
+    debugger;
     axios
       .patch(`${jsonApi}/tasks/` + taskObj.id, {
         text: newTaskText,

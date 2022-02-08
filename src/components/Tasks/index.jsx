@@ -14,7 +14,7 @@ function Tasks({ list, onEditTitle, onAddTask, onRemoveTask, onEditTask, onCompl
     if (newTitle) {
       onEditTitle(list.id, newTitle);
       axios
-        .patch(`${jsonApi}lists/` + list.id, {
+        .patch(`${jsonApi}/lists/` + list.id, {
           name: newTitle,
         })
         .catch(() => {
