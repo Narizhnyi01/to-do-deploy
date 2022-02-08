@@ -5,6 +5,7 @@ import Bage from '../Bage';
 import List from '../List';
 import CloseSvg from '../../assets/img/close.svg';
 import './AddListButton.scss';
+import { jsonApi } from '../../Api';
 
 const AddList = ({ colors, onAdd }) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
@@ -31,7 +32,7 @@ const AddList = ({ colors, onAdd }) => {
     }
     setIsLoading(true);
     axios
-      .post('http://localhost:3001/lists', { name: inputValue, colorId: selectedColor })
+      .post(`${jsonApi}/lists`, { name: inputValue, colorId: selectedColor })
       .then(({ data }) => {
         const color = colors.filter((color) => color.id === selectedColor)[0];
         const listObj = { ...data, color, tasks: [] };
