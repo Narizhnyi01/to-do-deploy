@@ -1,0 +1,97 @@
+{
+  "lists": [
+    {
+      "name": "sdcd",
+      "colorId": 3,
+      "id": 1
+    },
+    {
+      "name": "332",
+      "colorId": 4,
+      "id": 2
+    },
+    {
+      "name": "csdc",
+      "colorId": 6,
+      "id": 3
+    },
+    {
+      "name": "scd",
+      "colorId": 7,
+      "id": 4
+    },
+    {
+      "name": "3232",
+      "colorId": 3,
+      "id": 5
+    }
+  ],
+  "tasks": [
+    {
+      "listId": 3,
+      "text": "qwdwqd",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "listId": 1,
+      "text": "13 32 32 qwerty",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "listId": 2,
+      "text": "cxz",
+      "completed": true,
+      "id": 3
+    },
+    {
+      "listId": 2,
+      "text": "zxc",
+      "completed": false,
+      "id": 4
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "hex": "#C9D1D3",
+      "name": "grey"
+    },
+    {
+      "id": 2,
+      "hex": "#42B883",
+      "name": "green"
+    },
+    {
+      "id": 3,
+      "hex": "#64C4ED",
+      "name": "blue"
+    },
+    {
+      "id": 4,
+      "hex": "#FFBBCC",
+      "name": "pink"
+    },
+    {
+      "id": 5,
+      "hex": "#B6E6BD",
+      "name": "lime"
+    },
+    {
+      "id": 6,
+      "hex": "#C355F5",
+      "name": "purple"
+    },
+    {
+      "id": 7,
+      "hex": "#110133",
+      "name": "black"
+    },
+    {
+      "id": 8,
+      "hex": "#FF6464",
+      "name": "red"
+    }
+  ]
+}

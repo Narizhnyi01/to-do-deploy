@@ -1,0 +1,63 @@
+.list {
+  $self: &;
+  margin-bottom: 30px;
+  &__add-button {
+    span {
+      color: #767676;
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: #000;
+        }
+      }
+      span {
+        color: #000;
+      }
+    }
+  }
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    span {
+      flex: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 100px;
+      white-space: nowrap;
+    }
+    &:hover #{$self}__remove-icon {
+      opacity: 0.5;
+    }
+    #{$self}__remove-icon {
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.4);
+    }
+    &.active {
+      background: #ffffff;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+    i {
+      margin-right: 8px;
+      display: inline-block;
+      img {
+        opacity: 0.6;
+      }
+    }
+  }
+  .bage {
+    position: relative;
+    left: 5px;
+  }
+}
